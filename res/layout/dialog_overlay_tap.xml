@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+
+            <TextView
+                android:id="@+id/dialog_overlay_tap_text"
+                android:layout_width="fill_parent"
+                android:layout_height="77dp"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, GeoPicActivity!</string>
+    <string name="app_name">GeoPic</string>
+    <string name="act_map">Map</string>
+    <string name="act_edit">Edit</string>
+    <string name="act_view">View</string>
+    <string name="help">help</string>
+    <string name="new_pic">Take a Picture</string>
+    <string name="edit_pic">Edit</string>
+    <string name="save_pic">Save</string>
+    <string name="cancel_edit_pic">Cancel</string>
+    <string name="gallery">Gallery</string>
+    <string name="dialog_overlay_tap_text">This is a new pick dialog</string>
+
+</resources>
