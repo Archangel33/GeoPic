@@ -63,30 +63,22 @@ public class GeoPicActivityEdit extends Activity {
     switch (item.getItemId()) {
     case R.id.save_pic:
       // save stuff and return to previous activity
+      Cursor mCursor;
       try{
         
         Drawable drawable = this.getResources().getDrawable(R.drawable.androidmarker);
         GeoPicItemizedOverlay itemizedoverlay = new GeoPicItemizedOverlay(drawable, this);
-        int lat = extras.getInt("lat");
-        int lon = extras.getInt("lon");
-        Uri contentUri = MediaStore.Images.Media.getContentUri(imageUri.toString());
+//        int lat = extras.getInt("lat");
+//        int lon = extras.getInt("lon");
+        mCursor = getContentResolver().query(imageUri, null, null, null, null);
+        mCursor.getColumnIndex("description");
         
+        System.out.println(mCursor.getCount());
+        for(String col: mCursor.getColumnNames()){
+          System.out.println(col);
+        }
         
-        Cursor mCursor = MediaStore.Images.Media.query(getContentResolver(), contentUri, null);
-        
-        System.out.println(mCursor.toString());
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        System.out.println(contentUri.toString());
-        
-        GeoPoint point = new GeoPoint(lat, lon);
+        GeoPoint point = new GeoPoint(38, -106);
         OverlayItem overlayitem = new OverlayItem(point, "" , "");
 
         itemizedoverlay.addOverlay(overlayitem);
