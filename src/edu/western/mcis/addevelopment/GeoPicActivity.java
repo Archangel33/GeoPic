@@ -57,6 +57,7 @@ public class GeoPicActivity extends MapActivity {
 
     MapView mapView = (MapView) findViewById(R.id.mapview1);
     mapView.setBuiltInZoomControls(true);
+    mapView.setSatellite(true);
 
     mapOverlays = mapView.getOverlays();
     Drawable drawable = this.getResources().getDrawable(R.drawable.androidmarker);
@@ -92,6 +93,7 @@ public class GeoPicActivity extends MapActivity {
       private void makeUseOfNewLocation(Location location) {
         // TODO Auto-generated method stub
         System.out.println("New Location!");
+        
 
       }
 
@@ -110,14 +112,14 @@ public class GeoPicActivity extends MapActivity {
     String locationProvider = LocationManager.GPS_PROVIDER;
 
     // get a cached location for quick initial location
-    // Location lastKnownLocation =
-    // locationManager.getLastKnownLocation(locationProvider);
+     Location lastKnownLocation =
+     locationManager.getLastKnownLocation(locationProvider);
 
     // Register the listener with the Location Manager to receive location
     // updates
     locationManager.requestLocationUpdates(locationProvider, 0, 0, locationListener);
-
-    // once you get the info you need stop looking for updates (saves batter)
+    
+    // once you get the info you need stop looking for updates (saves better)
     // Remove the listener you previously added
     // locationManager.removeUpdates(locationListener);
 
@@ -167,6 +169,7 @@ public class GeoPicActivity extends MapActivity {
     values.put(MediaStore.Images.Media.DATE_TAKEN, cal.getTimeInMillis());
     values.put(MediaStore.Images.Media.LATITUDE, 1);
     values.put(MediaStore.Images.Media.LONGITUDE, 1);
+    
     imageUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
     // create new Intent
     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
